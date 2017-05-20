@@ -7,7 +7,7 @@ class Person {
 
     public function __construct($firstName, $lastName) {
         $this->firstName = $firstName;
-        $this->lastName = $firstName;
+        $this->lastName = $lastName;
     }
 
     public function fullName() {
