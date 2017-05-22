@@ -1,6 +1,6 @@
 <?php
 
-namespace Arcraft;
+namespace Arcoders;
 
 interface Armor
 {

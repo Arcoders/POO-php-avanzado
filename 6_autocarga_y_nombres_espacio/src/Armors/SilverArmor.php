@@ -1,8 +1,7 @@
 <?php
 
-namespace Arcoders;
-
-use Arcraft\Armor;
+namespace Arcoders\Armors;
+use Arcoders\Armor;
 
 class SilverArmor implements Armor
 {

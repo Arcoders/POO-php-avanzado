@@ -2,8 +2,6 @@
 
 namespace Arcoders;
 
-use Arcraft\Armor;
-
 class Soldier extends Unit
 {
 

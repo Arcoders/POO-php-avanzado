@@ -1,0 +1,19 @@
+{
+    "name": "arcoders/oop",
+    "description": "Proyecto para practicar la programacion orientada a objetos",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ismael Haytam",
+            "email": "admin@arcoders.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "files": ["src/helpers.php"],
+        "psr-4": {
+            "Arcoders\\": "src/"
+        }
+    }
+}
