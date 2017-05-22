@@ -1,14 +1,18 @@
 <?php
 
 namespace Arcoders\Armors;
-use Arcoders\Armor;
+use Arcoders\{Armor, Attack};
 
 class SilverArmor implements Armor
 {
 
-    public function absorbDamage($damage)
+    public function absorbDamage(Attack $attack)
     {
-        return $damage / 4;
+
+        if ($attack->isPhysical()) return $attack->getDamage() / 3;
+
+        return $attack->getDamage();
+
     }
 
 }

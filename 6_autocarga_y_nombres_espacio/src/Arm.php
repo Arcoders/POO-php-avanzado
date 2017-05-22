@@ -14,5 +14,4 @@ abstract class Arm
         return new Attack($this->damage, $this->magical, $this->description);
     }
 
-
 }

@@ -8,7 +8,7 @@ $randName = new Unit('Malon', new Arm\BasicSword);
 
 $randName->setArmor(new Armors\SilverArmor());
 
-$arcoders = new Unit('Arcoders', new Arm\CrossBow);
+$arcoders = new Unit('Arcoders', new Arm\FireBow);
 
 $arcoders->move('el norte');
 
