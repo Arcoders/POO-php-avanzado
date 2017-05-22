@@ -13,6 +13,7 @@ class Unit {
     {
         $this->name = $name;
         $this->arm = $arm;
+        $this->armor = new Armors\MissingArmor();
     }
 
     public function setArm(Arm $arm)
@@ -71,9 +72,7 @@ class Unit {
     protected function absorbDamage(Attack $attack)
     {
 
-        if ($this->armor) return $this->armor->absorbDamage($attack);
-
-        return $attack->getDamage();
+        return $this->armor->absorbDamage($attack);
 
     }
 
