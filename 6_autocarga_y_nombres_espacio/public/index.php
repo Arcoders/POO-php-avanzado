@@ -4,11 +4,11 @@ namespace Arcoders;
 
 require '../vendor/autoload.php';
 
-$randName = new Soldier('Malon', new Arm\BasicSword);
+$randName = new Unit('Malon', new Arm\BasicSword);
 
-$randName->setArmor(new Armors\BronzeArmor());
+$randName->setArmor(new Armors\SilverArmor());
 
-$arcoders = new Archer('Arcoders', new Arm\CrossBow);
+$arcoders = new Unit('Arcoders', new Arm\CrossBow);
 
 $arcoders->move('el norte');
 

@@ -2,7 +2,7 @@
 
 namespace Arcoders;
 
-abstract class Unit {
+class Unit {
 
     protected $hp = 40;
     protected $name;
@@ -43,20 +43,22 @@ abstract class Unit {
     public function attack(Unit $opponent)
     {
 
-        show($this->arm->getDescription($this, $opponent));
+        $attack = $this->arm->createAttack();
 
-        $opponent->takeDamage($this->arm->getDamage());
+        show($attack->getDescription($this, $opponent));
+
+        $opponent->takeDamage($attack);
 
     }
 
-    public function takeDamage($damage)
+    public function takeDamage(Attack $attack)
     {
 
-        $this->hp = $this->hp - $this->absorbDamage($damage);
+        $this->hp = $this->hp - $this->absorbDamage($attack->getDamage());
 
         show("{$this->name} ahora tiene {$this->hp} puntos de vida");
 
-        if ($this->getHp() <= 0) $this->die();
+        if ($this->hp <= 0) $this->die();
 
     }
 
@@ -68,7 +70,10 @@ abstract class Unit {
 
     protected function absorbDamage($damage)
     {
-        if ($this->armor) return $this->armor->absorbDamage($damage);
+        if ($this->armor) {
+            $damage = $this->armor->absorbDamage($damage);
+        }
+        return $damage;
     }
 
 

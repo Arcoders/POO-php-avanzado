@@ -3,14 +3,10 @@
 namespace Arcoders\Arm;
 use Arcoders\{Arm, Unit};
 
-class CrossBow extends Bow
+class CrossBow extends Arm
 {
 
     protected $damage = 40;
-
-    public function getDescription(Unit $attacker, Unit $opponent)
-    {
-        return "{$attacker->getName()} ataca con la espada a {$opponent->getName()}";
-    }
+    protected $description = ':unit dispara una flecha a :opponent';
 
 }
