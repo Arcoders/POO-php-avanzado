@@ -8,20 +8,18 @@ class Unit {
     protected $name;
     protected $armor;
     protected $arm;
-    protected $logger;
 
-    public function __construct($name, Arm $arm, $logger)
+    public function __construct($name, Arm $arm)
     {
         $this->name = $name;
         $this->arm = $arm;
         $this->armor = new Armors\MissingArmor();
-        $this->logger = $logger;
     }
 
-    public static function createSoldier($logger)
+    public static function createSoldier()
     {
 
-        $soldier = new Unit('Malon', new Arm\BasicSword, $logger);
+        $soldier = new Unit('Malon', new Arm\BasicSword);
         $soldier->setArmor(new Armors\BronzeArmor());
 
         return $soldier;
@@ -57,7 +55,7 @@ class Unit {
 
     public function move($direction)
     {
-        $this->logger->info("{$this->name} avanza hacia $direction");
+        Log::info("{$this->name} avanza hacia $direction");
     }
 
     public function attack(Unit $opponent)
@@ -65,7 +63,7 @@ class Unit {
 
         $attack = $this->arm->createAttack();
 
-        $this->logger->info($attack->getDescription($this, $opponent));
+        Log::info($attack->getDescription($this, $opponent));
 
         $opponent->takeDamage($attack);
 
@@ -76,7 +74,7 @@ class Unit {
 
         $this->hp = $this->hp - $this->armor->absorbDamage($attack);
 
-        $this->logger->info("{$this->name} ahora tiene {$this->hp} puntos de vida");
+        Log::info("{$this->name} ahora tiene {$this->hp} puntos de vida");
 
         if ($this->hp <= 0) $this->die();
 
@@ -84,7 +82,7 @@ class Unit {
 
     public function die()
     {
-        $this->logger->info("{$this->name} muere :/");
+        Log::info("{$this->name} muere :/");
         exit();
     }
 

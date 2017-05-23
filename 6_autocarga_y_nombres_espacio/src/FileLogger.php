@@ -2,7 +2,7 @@
 
 namespace Arcoders;
 
-class FileLogger
+class FileLogger implements Logger
 {
 
     public function info($message)

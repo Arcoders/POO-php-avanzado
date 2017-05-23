@@ -2,7 +2,7 @@
 
 namespace Arcoders;
 
-class HtmlLogger
+class HtmlLogger implements Logger
 {
 
     public function info($message)
