@@ -3,7 +3,7 @@
 namespace Arcoders\Armors;
 use Arcoders\{Armor, Attack};
 
-class BronzeArmor implements Armor
+class BronzeArmor extends Armor
 {
 
     public function absorbDamage(Attack $attack)

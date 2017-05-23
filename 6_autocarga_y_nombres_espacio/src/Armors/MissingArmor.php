@@ -3,7 +3,7 @@
 namespace Arcoders\Armors;
 use Arcoders\{Armor, attack};
 
-class MissingArmor implements Armor
+class MissingArmor extends Armor
 {
 
     public function absorbDamage(Attack $attack)
