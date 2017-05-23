@@ -7,6 +7,5 @@ class BasicBow extends  Arm
 {
 
     protected $damage = 20;
-    protected $description = ':unit dispara una flecha :opponent';
 
 }
