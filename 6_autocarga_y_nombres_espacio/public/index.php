@@ -11,11 +11,13 @@ Translator::set([
     'FireBowAttack' => ':unit dispara una flecha de fuego a :opponent'
 ]);
 
-$malo = Unit::createSoldier()
+$logger = new FileLogger();
+
+$malo = Unit::createSoldier($logger)
             ->setArmor(new Armors\SilverArmor())
             ->setShield();
 
-$arcoders = new Unit('Arcoders', new Arm\FireBow);
+$arcoders = new Unit('Arcoders', new Arm\FireBow, $logger);
 
 $arcoders->move('el norte');
 

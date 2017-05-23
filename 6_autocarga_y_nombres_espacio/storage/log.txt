@@ -1,0 +1,12 @@
+(2017-05-23 18:27:12)Arcoders avanza hacia el norte
+(2017-05-23 18:27:12)Arcoders dispara una flecha de fuego a Malon
+(2017-05-23 18:27:12)Malon ahora tiene 10 puntos de vida
+(2017-05-23 18:27:12)Arcoders dispara una flecha de fuego a Malon
+(2017-05-23 18:27:12)Malon ahora tiene -20 puntos de vida
+(2017-05-23 18:27:12)Malon muere :/
+(2017-05-23 18:27:38)Arcoders avanza hacia el norte
+(2017-05-23 18:27:38)Arcoders dispara una flecha de fuego a Malon
+(2017-05-23 18:27:38)Malon ahora tiene 10 puntos de vida
+(2017-05-23 18:27:38)Arcoders dispara una flecha de fuego a Malon
+(2017-05-23 18:27:38)Malon ahora tiene -20 puntos de vida
+(2017-05-23 18:27:38)Malon muere :/
