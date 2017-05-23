@@ -16,14 +16,31 @@ class Unit {
         $this->armor = new Armors\MissingArmor();
     }
 
+    public static function createSoldier()
+    {
+
+        $soldier = new Unit('Malon', new Arm\BasicSword);
+        $soldier->setArmor(new Armors\BronzeArmor());
+
+        return $soldier;
+
+    }
+
     public function setArm(Arm $arm)
     {
         $this->arm = $arm;
+        return $this;
     }
 
     public function setArmor(Armor $armor = null)
     {
         $this->armor = $armor;
+        return $this;
+    }
+
+    public function setShield()
+    {
+        return $this;
     }
 
     public function getName()

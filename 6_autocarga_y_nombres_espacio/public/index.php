@@ -11,16 +11,16 @@ Translator::set([
     'FireBowAttack' => ':unit dispara una flecha de fuego a :opponent'
 ]);
 
-$randName = new Unit('Malon', new Arm\BasicSword);
-
-$randName->setArmor(new Armors\SilverArmor());
+$malo = Unit::createSoldier()
+            ->setArmor(new Armors\SilverArmor())
+            ->setShield();
 
 $arcoders = new Unit('Arcoders', new Arm\FireBow);
 
 $arcoders->move('el norte');
 
-$arcoders->attack($randName);
+$arcoders->attack($malo);
 
-$arcoders->attack($randName);
+$arcoders->attack($malo);
 
-$randName->attack($arcoders);
+$malo->attack($arcoders);
