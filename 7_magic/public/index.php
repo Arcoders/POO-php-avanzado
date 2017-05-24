@@ -30,4 +30,12 @@ $node_3 = HtmlNode::textarea($value)
             ->name('content')
             ->class('btn btn-default');
 
-echo $node_3->render();
+echo $node_3;
+
+var_dump($node_3('name'), $node_3('width', 100));
+
+// --------------------------------------------
+
+echo HtmlNode::textarea($value)
+            ->name('content')
+            ->class('btn btn-default');
