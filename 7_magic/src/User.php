@@ -10,4 +10,14 @@ class User extends Model
         return strtoupper($value);
     }
 
+    public function getLastNameAttribute($value)
+    {
+        return strtolower($value);
+    }
+
+    public function getNickNameAttribute($value)
+    {
+        return str_replace($value, '...', $value);
+    }
+
 }

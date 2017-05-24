@@ -1,20 +1,33 @@
 <?php
 
-use Arcoders\User;
+use Arcoders\HtmlNode;
 
 require '../vendor/autoload.php';
 
-$user = new User();
 
-$user->fill([
-    'first_name' => 'Ismael',
-    'last_name' => 'Haytam'
-]);
+$value = 'Lorem ipsum...';
 
-$user->nickname = 'Arcoders';
+// --------------------------------------------
 
-unset($user->nickname);
+$node_1 = new HtmlNode('textarea', $value, [
+            'name' => 'content',
+            'class' => 'btn btn-default']
+        );
 
-echo "<p>Bienvenido {$user->first_name} {$user->last_name}</p>";
+echo $node_1 = $node_1->render();
 
-if (isset ($user->nickname)) echo "<p>Nickname {$user->nickname}</p>";
+// --------------------------------------------
+
+$node_2 = (new HtmlNode('textarea', $value))
+            ->name('content')
+            ->class('btn btn-default');
+
+echo $node_2->render();
+
+// --------------------------------------------
+
+$node_3 = HtmlNode::textarea($value)
+            ->name('content')
+            ->class('btn btn-default');
+
+echo $node_3->render();
