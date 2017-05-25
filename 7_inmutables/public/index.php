@@ -4,13 +4,7 @@ use Arcoders\{User, LunchBox, Food};
 
 require '../vendor/autoload.php';
 
-$gordon = new User(['name' => 'Gordon']);
-
 $joanie = new User(['name' => 'Joanie']);
-
-$haley = new User(['name' => 'Haley']);
-
-$lunchBox = new LunchBox(['Sandwich', 'Papas', 'Jugo de naranja', 'Manzana']);
 
 $lunchBox = new LunchBox([
     new Food(['name' => 'Sandwich', 'beverage' => false]),
