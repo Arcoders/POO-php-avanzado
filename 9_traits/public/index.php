@@ -1,5 +1,15 @@
 <?php
 
+trait CanPerformBasicActions
+{
+
+    public function move()
+    {
+        echo '<p>Caminó</p>';
+    }
+
+}
+
 trait CanShootArrows
 {
 
@@ -13,13 +23,12 @@ trait CanShootArrows
 trait canRide
 {
 
-    public function ride()
+    public function move()
     {
         echo '<p>Cabalgó</p>';
     }
 
 }
-
 
 class Knight
 {
@@ -33,17 +42,16 @@ class Archer
 
     use CanShootArrows;
 
-    public function walk()
-    {
-        echo '<p>Caminó</p>';
-    }
-
 }
 
 class MountedArcher
 {
 
-    use CanRide, CanShootArrows;
+    use CanPerformBasicActions, CanRide {
+        CanRide::move insteadof CanPerformBasicActions;
+        CanRide::move as ride;
+        CanPerformBasicActions::move as basicMove;
+    }
 
 }
 
@@ -51,5 +59,5 @@ $archer = new Archer();
 $archer->shootArrow();
 
 $MountedArcher = new MountedArcher();
-$MountedArcher->shootArrow();
+$MountedArcher->basicMove();
 $MountedArcher->ride();
