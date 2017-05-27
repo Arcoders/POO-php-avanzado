@@ -18,6 +18,11 @@ trait CanShootArrows
         echo '<p>Disparó una flecha</p>';
     }
 
+    abstract public function getArrows()
+    {
+        return $this->arrows ?? 50;
+    }
+
 }
 
 trait canRide
@@ -47,17 +52,13 @@ class Archer
 class MountedArcher
 {
 
-    use CanPerformBasicActions, CanRide {
-        CanRide::move insteadof CanPerformBasicActions;
-        CanRide::move as ride;
-        CanPerformBasicActions::move as basicMove;
-    }
+    public $arrows = 70;
+
+    use CanShootArrows, CanRide;
 
 }
 
-$archer = new Archer();
-$archer->shootArrow();
-
 $MountedArcher = new MountedArcher();
-$MountedArcher->basicMove();
-$MountedArcher->ride();
+$MountedArcher->shootArrow();
+
+echo "<p>{$MountedArcher->getArrows()}</p>";
