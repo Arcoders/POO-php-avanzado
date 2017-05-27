@@ -12,14 +12,26 @@ class HtmlBuilder
 
     // generear HTML...
 
-    public function success($message)
+    private static $macros;
+
+    public static function hasMacro($method)
     {
-        return "<p style='background-color: #dff0d8;
-                          border-color: #d0e9c6;
-                          color: #3c763d;
-                          padding: 10px'>
-            {$message}
-        </p>";
+        return isset (static::$macros[$method]);
+    }
+
+    public static function macro($method, \Closure $macro)
+    {
+        static::$macros[$method] = $macro;
+    }
+
+    public function __call($method, array $arguments)
+    {
+        if (static::hasMacro($method)) {
+            return call_user_func_array(static::$macros[$method], $arguments);
+        }
+
+        throw new \BadMethodCallException("The method {$method} does no exist");
+
     }
 
 }
