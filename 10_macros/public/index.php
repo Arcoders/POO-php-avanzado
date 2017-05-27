@@ -1,6 +1,7 @@
 <?php
 
 require '../vendor/autoload.php';
+require '../vendor/laravel/Macroable.php';
 require '../vendor/laravel/HtmlBuilder.php';
 
 use Laravel\HtmlBuilder;
@@ -12,12 +13,10 @@ HtmlBuilder::macro('success', function ($message) {
     color: #3c763d;
     padding: 10px'>
     {$message}
-    </p>";
+    </p>" . $this->hr();
 
 });
 
 $html = new HtmlBuilder();
-
-echo $html->hr();
 
 echo $html->success('Todo salió bien!');
