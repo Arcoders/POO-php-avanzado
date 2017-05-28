@@ -1,0 +1,23 @@
+{
+    "name": "arcoders/oop",
+    "description": "Proyecto demo para el curso de programacion orientada a objetos",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ismael Haytam",
+            "email": "admin@arcoders.com"
+        }
+    ],
+    "require": {
+        "nesbot/carbon": "^1.22"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Arcoders\\": "src/"
+        }
+    }
+}
